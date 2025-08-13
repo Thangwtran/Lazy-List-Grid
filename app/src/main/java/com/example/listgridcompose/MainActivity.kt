@@ -41,7 +41,6 @@ fun MainApp() {
         } else {
             CategoryScreen()
         }
-
     }
 }
 

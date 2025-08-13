@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Ignore IntelliJ IDEA settings
+.idea/vcs.xml
+

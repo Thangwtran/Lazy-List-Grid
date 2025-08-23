@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -33,7 +35,82 @@ import com.example.listgridcompose.ui.theme.ListGridComposeTheme
 
 @Composable
 fun VideoDetailScreen(modifier: Modifier = Modifier, openCategoryScreen: () -> Unit) {
+    val listVideos = fakeVideoData()
+    LazyColumn {
+        items(listVideos){video ->
+            NextVideo(
+                videoTitle = video.videoTitle,
+                views = video.views,
+                timeAgo = video.timeAgo,
+                modifier = Modifier.padding(12.dp)
+            )
+        }
+    }
+}
 
+fun fakeVideoData(): List<Video> {
+    return listOf(
+        Video(
+            videoTitle = "Android Jetpack Compose List and Grid",
+            views = 999,
+            timeAgo = "1 day ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Basic Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        ),
+        Video(
+            videoTitle = "Jetpack Compose Constraint Layout",
+            views = 22,
+            timeAgo = " 20 years ago"
+        )
+    )
 }
 
 @Composable
